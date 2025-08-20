@@ -55,15 +55,15 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 
 y_pred = model.predict(X_test)
 
-print("✅ Accuracy:", accuracy_score(y_test, y_pred))
-print("\n📊 Classification Report:\n", classification_report(y_test, y_pred))
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("\n Classification Report:\n", classification_report(y_test, y_pred))
 
 
 cm = confusion_matrix(y_test, y_pred)
-print("\n📊 Confusion Matrix:\n", cm)
+print("\n Confusion Matrix:\n", cm)
 
 
-print("\n📊 Sentiment Distribution:\n")
+print("\n Sentiment Distribution:\n")
 print(df['sentiment'].value_counts())
 
 
@@ -74,6 +74,7 @@ def get_top_n_words(corpus, n=10):
     counter = Counter(all_words)
     return counter.most_common(n)
 
-print("\n📊 Top Positive Words:", get_top_n_words(df[df['sentiment']=='positive']['clean_text']))
-print("\n📊 Top Negative Words:", get_top_n_words(df[df['sentiment']=='negative']['clean_text']))
-print("\n📊 Top Neutral Words:", get_top_n_words(df[df['sentiment']=='neutral']['clean_text']))
+print("\n Top Positive Words:", get_top_n_words(df[df['sentiment']=='positive']['clean_text']))
+print("\n Top Negative Words:", get_top_n_words(df[df['sentiment']=='negative']['clean_text']))
+print("\n Top Neutral Words:", get_top_n_words(df[df['sentiment']=='neutral']['clean_text']))
+
